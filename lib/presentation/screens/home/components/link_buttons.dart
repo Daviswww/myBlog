@@ -19,10 +19,17 @@ class _LinkButtonsState extends State<LinkButtons> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(milliseconds: 500), () {
-      setState(() {
-        a1 = true;
-      });
+      try {
+        setState(() {
+          a1 = true;
+        });
+      } catch (_) {}
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override

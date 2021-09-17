@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
     initialPage: 0,
     keepPage: true,
   );
-  double? currentPageIndex = -1;
+  double? currentPageIndex = 0;
 
   bool a1 = false;
   @override
@@ -29,18 +29,16 @@ class _MainScreenState extends State<MainScreen> {
     _controller.addListener(() {
       setState(() {
         currentPageIndex = _controller.page;
-        // TODO: OPEN
-        // if (currentPageIndex! >= 1) {
-        //   a1 = true;
-        // } else {
-        //   a1 = false;
-        // }
+        if (currentPageIndex! >= 1) {
+          a1 = true;
+        } else {
+          a1 = false;
+        }
       });
     });
     try {
       Future.delayed(Duration(milliseconds: 500), () {
         setState(() {
-          a1 = true;
           currentPageIndex = 0;
         });
       });
@@ -59,7 +57,7 @@ class _MainScreenState extends State<MainScreen> {
             controller: _controller,
             scrollDirection: Axis.vertical,
             children: [
-              // HomeView(),
+              HomeView(),
               AboutView(),
               Container(
                 height: 10,

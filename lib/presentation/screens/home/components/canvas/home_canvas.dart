@@ -17,20 +17,26 @@ class _HomeCanvasState extends State<HomeCanvas> {
   @override
   void initState() {
     super.initState();
-    try {
-      Future.delayed(Duration(milliseconds: 500), () {
-        setState(() {
+
+    Future.delayed(Duration(milliseconds: 500), () {
+      try {
+        super.setState(() {
           a1 = !a1;
         });
-      });
-      Future.delayed(Duration(milliseconds: 2800), () {
+      } catch (_) {}
+    });
+    Future.delayed(Duration(milliseconds: 2800), () {
+      try {
         setState(() {
           a2 = !a2;
         });
-      });
-    } catch (_) {
-      log("home canvas ainmation ", name: "ERROR");
-    }
+      } catch (_) {}
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override

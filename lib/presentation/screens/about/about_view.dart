@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:myblog/presentation/screens/about/components/about_canvas.dart';
 import 'package:myblog/presentation/screens/about/components/about_sentence.dart';
@@ -18,15 +20,24 @@ class _AboutViewState extends State<AboutView> {
   void initState() {
     super.initState();
     Future.delayed(Duration(milliseconds: 500), () {
-      setState(() {
-        a1 = true;
-      });
+      try {
+        setState(() {
+          a1 = true;
+        });
+      } catch (_) {}
     });
     Future.delayed(Duration(milliseconds: 1500), () {
-      setState(() {
-        a2 = true;
-      });
+      try {
+        setState(() {
+          a2 = true;
+        });
+      } catch (_) {}
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
@@ -40,6 +51,18 @@ class _AboutViewState extends State<AboutView> {
           Positioned(
             left: 2 * (MediaQuery.of(context).size.width / 10),
             child: AboutSentence(a2: a2),
+          ),
+          Positioned(
+            left: 50,
+            bottom: 50,
+            child: Transform.rotate(
+              angle: pi / 4 * 5,
+              child: Icon(
+                Icons.arrow_back_outlined,
+                size: 150,
+                color: Theme.of(context).primaryColorLight,
+              ),
+            ),
           ),
           AboutCanvas(cut: cut, a1: a1),
         ],
