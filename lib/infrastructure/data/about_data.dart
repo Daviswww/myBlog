@@ -1,8 +1,8 @@
 class AboutData {
   static List t1 = [
+    "成立程式競賽研討社",
     "2018 ACM-ICPC 國際大學程式設計競賽台灣暑期訓練營邀請賽",
     "2018 ACM-ICPC 國際大學程式設計競賽台灣花蓮站",
-    "成立程式競賽研討社",
   ];
   static List t2 = [
     "2019 ACM-ICPC 國際大學程式設計競賽中國南昌邀請賽",

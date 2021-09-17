@@ -56,22 +56,19 @@ class _AboutSentenceState extends State<AboutSentence> {
     );
   }
 
-  MouseRegion _sentence(
+  Container _sentence(
       BuildContext context, String year, List data, bool _onHover) {
-    return MouseRegion(
-      onHover: (event) {},
-      child: AnimatedContainer(
-        padding: EdgeInsets.only(top: 20),
-        alignment: Alignment.topLeft,
-        height: 400,
-        width: _onHover ? 600 : 40,
-        duration: Duration(milliseconds: 1000),
-        curve: Interval(0.0, 0.5),
-        color: Theme.of(context).primaryColorDark,
-        child: Stack(
-          children: [
-            Transform.rotate(
-              angle: pi / 2,
+    return Container(
+      width: 600,
+      height: 400,
+      color: Theme.of(context).primaryColorDark,
+      child: Stack(
+        children: [
+          Transform.rotate(
+            angle: pi / 2,
+            child: Container(
+              color: Theme.of(context).hoverColor,
+              padding: EdgeInsets.only(left: 8, right: 8),
               child: Text(
                 "$year",
                 style: GoogleFonts.staatliches(
@@ -79,24 +76,19 @@ class _AboutSentenceState extends State<AboutSentence> {
                 ),
               ),
             ),
-            // AnimatedOpacity(
-            //   duration: Duration(milliseconds: 500),
-            //   opacity: _onHover ? 1 : 0,
-            //   child:
-            // ),
-            ListView.builder(
-              itemCount: data.length,
-              itemBuilder: (BuildContext ctxt, int index) {
-                return Container(
-                  margin: EdgeInsets.only(left: 60, bottom: 16),
-                  child: Text(
-                    data[index],
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
+          ),
+          ListView.builder(
+            itemCount: data.length,
+            itemBuilder: (BuildContext ctxt, int index) {
+              return Container(
+                margin: EdgeInsets.only(left: 60, bottom: 16),
+                child: Text(
+                  data[index],
+                ),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
