@@ -56,6 +56,7 @@ class _LinkButtonsState extends State<LinkButtons> {
         icon,
         width: 23,
         height: 23,
+        color: Theme.of(context).toggleableActiveColor,
       ),
       onPressed: () {
         html.window.open(link, 'new tab');

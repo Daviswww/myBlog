@@ -8,7 +8,7 @@ class AppThemeData {
     primaryColor: oid1Color,
     primaryColorDark: oid2Color,
     primaryColorLight: oid3Color,
-    toggleableActiveColor: oid4Color,
+    toggleableActiveColor: Colors.white,
     hoverColor: oid5Color,
     shadowColor: oid4Color,
     textTheme: TextTheme(
@@ -26,7 +26,7 @@ class AppThemeData {
     primaryColor: oil1Color,
     primaryColorDark: oil2Color,
     primaryColorLight: oil3Color,
-    toggleableActiveColor: oil4Color,
+    toggleableActiveColor: Colors.black,
     hoverColor: oil5Color,
     shadowColor: oil4Color,
     textTheme: TextTheme(

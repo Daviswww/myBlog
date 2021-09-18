@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:myblog/presentation/screens/about/about_view.dart';
 import 'package:myblog/presentation/screens/home/home_view.dart';
 import 'package:myblog/presentation/screens/main/components/guide_bar/left_guide_bar.dart';
+import 'package:myblog/presentation/screens/project/project_view.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({
@@ -59,11 +60,7 @@ class _MainScreenState extends State<MainScreen> {
             children: [
               HomeView(),
               AboutView(),
-              Container(
-                height: 10,
-                width: 10,
-                color: Colors.amber,
-              ),
+              ProjectView(),
             ],
           ),
           Positioned(

@@ -20,7 +20,6 @@ class _SwtichModeButtonState extends State<SwtichModeButton> {
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
           hoverColor: Colors.transparent,
-          color: Theme.of(context).toggleableActiveColor,
           onPressed: () {
             setState(() {
               isDark = !isDark;
