@@ -58,8 +58,8 @@ class _MainScreenState extends State<MainScreen> {
             controller: _controller,
             scrollDirection: Axis.vertical,
             children: [
-              HomeView(),
-              AboutView(),
+              // HomeView(),
+              // AboutView(),
               ProjectView(),
             ],
           ),
