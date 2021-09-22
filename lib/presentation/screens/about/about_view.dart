@@ -34,7 +34,7 @@ class _AboutViewState extends State<AboutView> with TickerProviderStateMixin {
     );
 
     _width1 = new Tween<double>(
-      begin: 0,
+      begin: 0.0,
       end: widget.width / 2,
     ).animate(
       new CurvedAnimation(
@@ -60,7 +60,7 @@ class _AboutViewState extends State<AboutView> with TickerProviderStateMixin {
       ),
     );
     _height2 = new Tween<double>(
-      begin: 0,
+      begin: 0.0,
       end: widget.height / 2,
     ).animate(
       new CurvedAnimation(

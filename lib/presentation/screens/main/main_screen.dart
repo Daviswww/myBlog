@@ -59,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
             controller: _controller,
             scrollDirection: Axis.vertical,
             children: [
-              // HomeView(),
+              HomeView(),
               AboutView(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,

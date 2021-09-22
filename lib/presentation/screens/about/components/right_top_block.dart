@@ -28,7 +28,7 @@ class RightTopBlock extends StatelessWidget {
             "I’m currently working on a Course!",
             style: GoogleFonts.staatliches(
               fontSize: 20,
-              color: Theme.of(context).toggleableActiveColor,
+              color: Colors.black,
             ),
           ),
           SizedBox(height: 16),
@@ -36,7 +36,7 @@ class RightTopBlock extends StatelessWidget {
             "I’m currently learning everything",
             style: GoogleFonts.staatliches(
               fontSize: 20,
-              color: Theme.of(context).toggleableActiveColor,
+              color: Colors.black,
             ),
           ),
           SizedBox(height: 16),
@@ -44,7 +44,7 @@ class RightTopBlock extends StatelessWidget {
             "Goals: Contribute more to Open Source projects",
             style: GoogleFonts.staatliches(
               fontSize: 20,
-              color: Theme.of(context).toggleableActiveColor,
+              color: Colors.black,
             ),
           ),
           SizedBox(height: 16),
@@ -52,7 +52,7 @@ class RightTopBlock extends StatelessWidget {
             "Fun fact: I love to travel and exercise",
             style: GoogleFonts.staatliches(
               fontSize: 20,
-              color: Theme.of(context).toggleableActiveColor,
+              color: Colors.black,
             ),
           ),
         ],
