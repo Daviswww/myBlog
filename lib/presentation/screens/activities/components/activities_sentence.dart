@@ -4,11 +4,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myblog/infrastructure/data/about_data.dart';
-import 'package:myblog/presentation/screens/about/components/bottom_line.dart';
+import 'package:myblog/presentation/screens/activities/components/bottom_line.dart';
 import 'package:myblog/shared/images.dart';
 
-class AboutSentence extends StatefulWidget {
-  const AboutSentence({
+class ActivitiesSentence extends StatefulWidget {
+  const ActivitiesSentence({
     Key? key,
     required this.a2,
   }) : super(key: key);
@@ -16,10 +16,10 @@ class AboutSentence extends StatefulWidget {
   final bool a2;
 
   @override
-  State<AboutSentence> createState() => _AboutSentenceState();
+  State<ActivitiesSentence> createState() => _ActivitiesSentenceState();
 }
 
-class _AboutSentenceState extends State<AboutSentence> {
+class _ActivitiesSentenceState extends State<ActivitiesSentence> {
   late final PageController _controller = PageController(
     initialPage: 0,
     keepPage: true,

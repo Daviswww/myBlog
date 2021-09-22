@@ -26,13 +26,13 @@ class LeftGuideBar extends StatelessWidget {
           GuideBarPoint(
             page: 2,
             index: _index,
-            title: "Projects",
+            title: "Activities",
           ),
           divLine(context),
           GuideBarPoint(
             page: 3,
             index: _index,
-            title: "Activities",
+            title: "Projects",
           ),
         ],
       ),

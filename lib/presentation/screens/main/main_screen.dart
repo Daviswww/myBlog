@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:myblog/presentation/screens/about/about_view.dart';
+import 'package:myblog/presentation/screens/activities/activities_view.dart';
 import 'package:myblog/presentation/screens/home/home_view.dart';
 import 'package:myblog/presentation/screens/main/components/guide_bar/left_guide_bar.dart';
 import 'package:myblog/presentation/screens/project/project_view.dart';
@@ -59,7 +60,11 @@ class _MainScreenState extends State<MainScreen> {
             scrollDirection: Axis.vertical,
             children: [
               // HomeView(),
-              // AboutView(),
+              AboutView(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+              ),
+              ActivitiesView(),
               ProjectView(),
             ],
           ),

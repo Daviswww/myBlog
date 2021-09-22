@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AboutCanvas extends StatelessWidget {
-  const AboutCanvas({
+class ActivitiesCanvas extends StatelessWidget {
+  const ActivitiesCanvas({
     Key? key,
     required this.cut,
     required this.a1,

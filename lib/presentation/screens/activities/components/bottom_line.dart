@@ -25,13 +25,13 @@ class BottomLine extends StatelessWidget {
           text: TextSpan(
             children: <TextSpan>[
               TextSpan(
-                text: "Hi there, ",
+                text: "No Pain ",
                 style: GoogleFonts.shrikhand(
                   fontSize: 50,
                 ),
               ),
               TextSpan(
-                text: "I'm Davis",
+                text: "No Gain.",
                 style: GoogleFonts.shrikhand(
                   fontSize: 50,
                   color: Theme.of(context).primaryColorLight,
