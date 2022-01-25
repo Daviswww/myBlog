@@ -45,6 +45,8 @@ class _HomeViewState extends State<HomeView> {
             MaterialButton(
               highlightColor: Colors.transparent,
               hoverColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              splashColor: Colors.transparent,
               onPressed: () {
                 BlocProvider.of<ApodBloc>(context).add(ChangeApodEvent());
               },
