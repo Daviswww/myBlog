@@ -5,22 +5,26 @@ class ConfigModel {
   final String API_HOST;
   final bool DEBUG;
   final bool TESTING;
+  final String KEY;
 
   const ConfigModel({
     required this.API_HOST,
     required this.DEBUG,
     required this.TESTING,
+    required this.KEY,
   });
 
   ConfigModel copyWith({
     String? API_HOST,
     bool? DEBUG,
     bool? TESTING,
+    String? KEY,
   }) {
     return ConfigModel(
       API_HOST: API_HOST ?? this.API_HOST,
       DEBUG: DEBUG ?? this.DEBUG,
       TESTING: TESTING ?? this.TESTING,
+      KEY: KEY ?? this.KEY,
     );
   }
 
@@ -29,14 +33,16 @@ class ConfigModel {
       'API_HOST': API_HOST,
       'DEBUG': DEBUG,
       'TESTING': TESTING,
+      'KEY': KEY,
     };
   }
 
   factory ConfigModel.fromMap(Map<String, dynamic> map) {
     return ConfigModel(
-      API_HOST: map['API_HOST'],
-      DEBUG: map['DEBUG'],
-      TESTING: map['TESTING'],
+      API_HOST: map['API_HOST'] ?? '',
+      DEBUG: map['DEBUG'] ?? false,
+      TESTING: map['TESTING'] ?? false,
+      KEY: map['KEY'] ?? '',
     );
   }
 
@@ -46,8 +52,9 @@ class ConfigModel {
       ConfigModel.fromMap(json.decode(source));
 
   @override
-  String toString() =>
-      'ConfigModel(API_HOST: $API_HOST, DEBUG: $DEBUG, TESTING: $TESTING)';
+  String toString() {
+    return 'ConfigModel(API_HOST: $API_HOST, DEBUG: $DEBUG, TESTING: $TESTING, KEY: $KEY)';
+  }
 
   @override
   bool operator ==(Object other) {
@@ -56,9 +63,12 @@ class ConfigModel {
     return other is ConfigModel &&
         other.API_HOST == API_HOST &&
         other.DEBUG == DEBUG &&
-        other.TESTING == TESTING;
+        other.TESTING == TESTING &&
+        other.KEY == KEY;
   }
 
   @override
-  int get hashCode => API_HOST.hashCode ^ DEBUG.hashCode ^ TESTING.hashCode;
+  int get hashCode {
+    return API_HOST.hashCode ^ DEBUG.hashCode ^ TESTING.hashCode ^ KEY.hashCode;
+  }
 }

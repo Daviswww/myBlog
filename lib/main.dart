@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:myblog/application/apod/apod_bloc.dart';
 import 'package:myblog/application/theme/theme_bloc.dart';
 import 'package:myblog/config/config_reader.dart';
 import 'package:myblog/config/environment.dart';
+import 'package:myblog/infrastructure/apod/apod_repository_impl.dart';
 import 'package:myblog/presentation/router/router.gr.dart';
 
 void main() async {
@@ -10,11 +12,17 @@ void main() async {
   await ConfigReader.initializeApp(Environment.prod);
 
   final AppRouter appRouter = AppRouter();
+  final ApodRepositoryImpl apodRepositoryImpl = ApodRepositoryImpl();
   runApp(
     MultiBlocProvider(
       providers: [
         BlocProvider(
           create: (context) => ThemeBloc(),
+        ),
+        BlocProvider(
+          create: (context) => ApodBloc(
+            apodRepositoryImpl: apodRepositoryImpl,
+          )..add(ChangeApodEvent()),
         ),
       ],
       child: MyApp(

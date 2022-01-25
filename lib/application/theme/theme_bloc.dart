@@ -9,22 +9,18 @@ part 'theme_state.dart';
 
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   ThemeBloc()
-      : super(ThemeState(themeData: AppThemeData.lightMode, isDark: false));
-
-  @override
-  Stream<ThemeState> mapEventToState(
-    ThemeEvent event,
-  ) async* {
-    if (event is ThemeChange) {
-      yield* _mapThemeChangeToState(event.isDark);
-    }
+      : super(ThemeState(themeData: AppThemeData.lightMode, isDark: false)) {
+    on<ThemeChange>((event, emit) async {
+      await _mapThemeChangeToState(emit, event.isDark);
+    });
   }
 
-  Stream<ThemeState> _mapThemeChangeToState(bool _isDark) async* {
+  Future<void> _mapThemeChangeToState(
+      Emitter<ThemeState> emit, bool _isDark) async {
     if (_isDark) {
-      yield ThemeState(themeData: AppThemeData.darkMode, isDark: true);
+      emit(ThemeState(themeData: AppThemeData.darkMode, isDark: true));
     } else {
-      yield ThemeState(themeData: AppThemeData.lightMode, isDark: false);
+      emit(ThemeState(themeData: AppThemeData.lightMode, isDark: false));
     }
   }
 }

@@ -10,8 +10,6 @@ class SwtichModeButton extends StatefulWidget {
 }
 
 class _SwtichModeButtonState extends State<SwtichModeButton> {
-  bool isDark = false;
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeBloc, ThemeState>(
@@ -21,11 +19,8 @@ class _SwtichModeButtonState extends State<SwtichModeButton> {
           highlightColor: Colors.transparent,
           hoverColor: Colors.transparent,
           onPressed: () {
-            setState(() {
-              isDark = !isDark;
-            });
             BlocProvider.of<ThemeBloc>(context).add(
-              ThemeChange(isDark),
+              ThemeChange(!state.isDark),
             );
           },
           icon: Icon(

@@ -8,7 +8,7 @@
             "name": "myblog",
             "request": "launch",
             "type": "dart",
-            "args": ["--no-sound-null-safety"]
+            "args": ["--no-sound-null-safety --web-renderer html"]
         },
         {
             "name": "myblog (profile mode)",

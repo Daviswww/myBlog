@@ -13,3 +13,5 @@ const Color oid2Color = Color(0xFFACD9F2);
 const Color oid3Color = Color(0xFFCFEEFF);
 const Color oid4Color = Color(0xFFA68255);
 const Color oid5Color = Color(0xFFF2D4AC);
+
+const Color bgColor = Color(0xFFFBF5EF);
