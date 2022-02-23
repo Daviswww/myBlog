@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myblog/application/apod/apod_bloc.dart';
 import 'package:myblog/presentation/screens/home/components/apod_widget.dart';
 import 'package:myblog/presentation/screens/home/components/circular_text_widget.dart';
 

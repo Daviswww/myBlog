@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myblog/application/apod/apod_bloc.dart';
 import 'package:myblog/presentation/screens/home/components/apod_button.dart';
-import 'package:myblog/presentation/screens/home/components/apod_widget.dart';
 import 'package:myblog/presentation/screens/home/components/canvas/home_canvas.dart';
-import 'package:myblog/presentation/screens/home/components/circular_text_widget.dart';
 import 'package:myblog/presentation/screens/home/components/link_buttons.dart';
 import 'package:myblog/presentation/screens/home/components/switch_mode_button.dart';
 
