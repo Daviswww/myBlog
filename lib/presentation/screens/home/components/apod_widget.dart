@@ -14,8 +14,10 @@ class ApodWidget extends StatelessWidget {
       builder: (context, state) {
         if (state is ApodStateSuccess) {
           return Container(
-            padding: EdgeInsets.all(16.0),
-            width: 330,
+            width: 360,
+            height: 430,
+            margin: EdgeInsets.all(80.0),
+            padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
             decoration: BoxDecoration(
               color: bgColor,
               borderRadius: BorderRadius.circular(4),
@@ -36,7 +38,9 @@ class ApodWidget extends StatelessWidget {
                   height: 300,
                   fit: BoxFit.cover,
                   loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) return child;
+                    if (loadingProgress == null) {
+                      return child;
+                    }
                     return SizedBox(
                       width: 300,
                       height: 300,
@@ -48,21 +52,33 @@ class ApodWidget extends StatelessWidget {
                   },
                 ),
                 SizedBox(height: 16),
-                Center(
-                  child: Text(
-                    state.apodModel.title,
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.pattaya(
-                      color: Colors.black,
-                      fontSize: 18,
-                    ),
+                Text(
+                  state.apodModel.title,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.pattaya(
+                    color: Colors.black,
+                    fontSize: 18,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                IconButton(
+                  onPressed: () {
+                    BlocProvider.of<ApodBloc>(context).add(ChangeApodEvent());
+                  },
+                  icon: Icon(
+                    Icons.fingerprint_outlined,
                   ),
                 ),
               ],
             ),
           );
         } else {
-          return Container();
+          return Container(
+            width: 300,
+            height: 300,
+            alignment: Alignment.center,
+            child: Text("Hello World"),
+          );
         }
       },
     );

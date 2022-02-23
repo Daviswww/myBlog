@@ -14,4 +14,4 @@ const Color oid3Color = Color(0xFFCFEEFF);
 const Color oid4Color = Color(0xFFA68255);
 const Color oid5Color = Color(0xFFF2D4AC);
 
-const Color bgColor = Color(0xFFFBF5EF);
+const Color bgColor = Color.fromARGB(255, 252, 237, 223);

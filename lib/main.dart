@@ -22,7 +22,7 @@ void main() async {
         BlocProvider(
           create: (context) => ApodBloc(
             apodRepositoryImpl: apodRepositoryImpl,
-          )..add(ChangeApodEvent()),
+          ),
         ),
       ],
       child: MyApp(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myblog/application/apod/apod_bloc.dart';
-import 'package:myblog/infrastructure/apod/apod_repository_impl.dart';
+import 'package:myblog/presentation/screens/home/components/apod_button.dart';
 import 'package:myblog/presentation/screens/home/components/apod_widget.dart';
 import 'package:myblog/presentation/screens/home/components/canvas/home_canvas.dart';
 import 'package:myblog/presentation/screens/home/components/circular_text_widget.dart';
@@ -19,8 +19,6 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final a = ApodRepositoryImpl();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,36 +31,29 @@ class _HomeViewState extends State<HomeView> {
           children: [
             Positioned(
               top: 30,
+              left: 30,
+              child: Text(
+                "DAVIS",
+                style: TextStyle(
+                  fontSize: 21,
+                  fontFamily: "Shippori Mincho",
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Positioned(
+              top: 30,
               right: 20,
               child: SwtichModeButton(),
             ),
-            Positioned(
-              left: 16,
-              bottom: 32,
-              child: ApodWidget(),
-            ),
             CircularTextWidget(),
-            MaterialButton(
-              highlightColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              splashColor: Colors.transparent,
-              onPressed: () {
-                BlocProvider.of<ApodBloc>(context).add(ChangeApodEvent());
+            BlocBuilder<ApodBloc, ApodState>(
+              builder: (context, state) {
+                if (state is ApodStateSuccess) {
+                  return ApodWidget();
+                }
+                return ApodButton();
               },
-              child: Text(
-                "Hello",
-                style: GoogleFonts.pattaya(
-                  fontSize: 40,
-                  shadows: [
-                    Shadow(
-                      blurRadius: 10.0,
-                      color: Theme.of(context).primaryColorDark,
-                      offset: Offset(5.0, 2.0),
-                    ),
-                  ],
-                ),
-              ),
             ),
             Positioned(
               right: 16,
