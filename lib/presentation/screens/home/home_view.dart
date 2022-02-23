@@ -46,15 +46,7 @@ class _HomeViewState extends State<HomeView> {
               right: 20,
               child: SwtichModeButton(),
             ),
-            CircularTextWidget(),
-            BlocBuilder<ApodBloc, ApodState>(
-              builder: (context, state) {
-                if (state is ApodStateSuccess) {
-                  return ApodWidget();
-                }
-                return ApodButton();
-              },
-            ),
+            ApodButton(),
             Positioned(
               right: 16,
               bottom: 12,

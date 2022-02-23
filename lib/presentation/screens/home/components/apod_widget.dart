@@ -10,13 +10,18 @@ class ApodWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ApodBloc, ApodState>(
+    return BlocConsumer<ApodBloc, ApodState>(
+      listener: ((context, state) {
+        if (state is ApodStateFailure) {
+          BlocProvider.of<ApodBloc>(context).add(ChangeApodEvent());
+        }
+      }),
       builder: (context, state) {
         if (state is ApodStateSuccess) {
           return Container(
             width: 360,
             height: 430,
-            margin: EdgeInsets.all(80.0),
+            margin: EdgeInsets.only(left: 16.0, right: 80.0),
             padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
             decoration: BoxDecoration(
               color: bgColor,
@@ -55,6 +60,7 @@ class ApodWidget extends StatelessWidget {
                 Text(
                   state.apodModel.title,
                   textAlign: TextAlign.center,
+                  maxLines: 1,
                   style: GoogleFonts.pattaya(
                     color: Colors.black,
                     fontSize: 18,
@@ -77,7 +83,14 @@ class ApodWidget extends StatelessWidget {
             width: 300,
             height: 300,
             alignment: Alignment.center,
-            child: Text("Hello World"),
+            child: Text(
+              "Hello Space",
+              style: TextStyle(
+                fontSize: 21,
+                fontFamily: "Shippori Mincho",
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           );
         }
       },

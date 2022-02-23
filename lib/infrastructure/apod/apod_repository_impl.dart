@@ -10,7 +10,7 @@ class ApodRepositoryImpl implements ApodRepository {
   final client = http.Client();
   final String domain = ConfigReader.config().API_HOST;
   final String key = ConfigReader.config().KEY;
-
+  var temp;
   @override
   Future<Either<ServiceFailure, ApodModel>> getApodImage() {
     return _getApodImage(
@@ -30,7 +30,14 @@ class ApodRepositoryImpl implements ApodRepository {
       );
       if (response.statusCode == 200) {
         final data = ApodModel.fromMap(jsonDecode(response.body)[0]);
-        return right(data);
+        if (data.url.contains('.jpg') || data.url.contains('.jpg')) {
+          return right(data);
+        } else {
+          return left(GetFailure(
+            code: response.statusCode,
+            message: response.body,
+          ));
+        }
       } else {
         return left(GetFailure(
           code: response.statusCode,
