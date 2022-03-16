@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myblog/presentation/screens/home/components/apod_button.dart';
 import 'package:myblog/presentation/screens/home/components/canvas/home_canvas.dart';
 import 'package:myblog/presentation/screens/home/components/link_buttons.dart';
@@ -48,8 +47,9 @@ class _HomeViewState extends State<HomeView> {
               bottom: 12,
               child: Text(
                 "Davis1997",
-                style: GoogleFonts.libreBarcode39(
+                style: TextStyle(
                   fontSize: 40,
+                  fontFamily: "Libre Barcode 39",
                 ),
               ),
             ),

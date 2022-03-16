@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myblog/application/apod/apod_bloc.dart';
 import 'package:myblog/presentation/screens/home/components/ball.dart';
 import 'package:myblog/shared/colors.dart';
@@ -61,13 +60,18 @@ class ApodWidget extends StatelessWidget {
                   state.apodModel.title,
                   textAlign: TextAlign.center,
                   maxLines: 1,
-                  style: GoogleFonts.pattaya(
-                    color: Colors.black,
+                  style: TextStyle(
                     fontSize: 18,
+                    color: Colors.black,
+                    fontFamily: "Pattaya",
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
                 IconButton(
+                  highlightColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  splashColor: Colors.transparent,
                   onPressed: () {
                     BlocProvider.of<ApodBloc>(context).add(ChangeApodEvent());
                   },

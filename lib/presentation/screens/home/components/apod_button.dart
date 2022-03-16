@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myblog/presentation/screens/home/components/apod_widget.dart';
 import 'package:myblog/presentation/screens/home/components/circular_text_widget.dart';
 
@@ -49,7 +48,8 @@ class _ApodButtonState extends State<ApodButton> {
                 },
                 child: Text(
                   "Hello",
-                  style: GoogleFonts.pattaya(
+                  style: TextStyle(
+                    fontFamily: "Pattaya",
                     fontSize: 40,
                     shadows: [
                       Shadow(

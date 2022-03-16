@@ -28,7 +28,6 @@ dependencies:
   flutter_bloc: ^8.0.1
   equatable: ^2.0.3
   auto_route: ^3.2.2
-  google_fonts: ^2.2.0
   dartz: ^0.10.1
   flutter_svg: ^1.0.3
   http: ^0.13.4
@@ -83,6 +82,12 @@ flutter:
           weight: 400
         - asset: assets/fonts/Shippori_Mincho/ShipporiMincho-SemiBold.ttf
           weight: 300
+    - family: Libre Barcode 39
+      fonts:
+        - asset: assets/fonts/Libre_Barcode_39/LibreBarcode39-Regular.ttf
+    - family: Pattaya
+      fonts:
+        - asset: assets/fonts/Pattaya/Pattaya-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
